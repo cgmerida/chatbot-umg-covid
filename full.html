@@ -1,0 +1,42 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+<style>
+* {
+margin:0;
+padding:0;
+}
+  .chatElement {
+    height: 100vh;
+    width: 100vw;
+  }
+</style>
+</head>
+<body>
+<div class="chatElement"></div>
+<script>
+  const element = document.querySelector('.chatElement');
+  window.watsonAssistantChatOptions = {
+    integrationID: "a985c0f8-7b43-4742-8d46-3ecf6fb9e2bf",
+    region: "us-south",
+    serviceInstanceID: "2e552953-770b-42f2-9566-95e5b0124d02",
+
+    // Provide the custom element.
+    element: element,
+    // Hide the close button since we want it always open.
+    hideCloseButton: true,
+    // Hide the default launcher.
+    showLauncher: false,
+    // Make the window open by default.
+    openChatByDefault: true,
+
+    onLoad: function(instance) {
+      instance.render();
+    }
+  };
+
+  setTimeout(function(){const t=document.createElement('script');t.src='https://web-chat.global.assistant.watson.appdomain.cloud/loadWatsonAssistantChat.js';document.head.appendChild(t);});
+</script>
+</body>
+</html>
